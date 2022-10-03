@@ -106,6 +106,7 @@ myObj.hasOwnProperty("top");
   
   <li>Accessing Nested Objects.</li>
   
+```javascript
 const myStorage = {
   "car": {
     "inside": {
