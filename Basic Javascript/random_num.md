@@ -1,3 +1,4 @@
+## Generate Random Numbers
 <ol>
   <li>Generate Random Fractions with JavaScript.</li>
   JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and 1 (exclusive). Thus Math.random() can return a 0 but never return a 1.
@@ -30,3 +31,5 @@ Math.floor(Math.random() * (max - min + 1)) + min
 // -> give a whole number from 0 to given range size
 // + min -> to get the number within provided range
 ```
+  
+</ol>
