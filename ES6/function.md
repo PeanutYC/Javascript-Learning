@@ -115,7 +115,7 @@ console.log(a, b);
 //omit first two elements
 const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function removeFirstTwo(list) {
-  const [a, b, ...arr] = list; 
+  const [a, b, ...arr] = list;  // can replace a and b with ",," => [,, ...arr]
   return arr;
 }
 const arr = removeFirstTwo(source);
