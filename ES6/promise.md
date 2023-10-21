@@ -1,0 +1,22 @@
+# Promises in Javascript
+
+A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. 
+When the task completes, you either fulfill your promise or fail to do so. 
+
+<ol>
+  <li>Create a JavaScript Promise</li>
+  
+```javascript
+// Promise is a constructor function, so you need to use the new keyword to create one.
+// It takes a function, as its argument, with two parameters - resolve and reject.
+const makeServerRequest = new Promise((resolve, reject) => {
+  
+})
+
+<li>Complete a Promise with resolve and reject</li>
+
+
+</ol>
+
+
+
