@@ -115,7 +115,7 @@ console.log(a, b);
 //omit first two elements
 const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function removeFirstTwo(list) {
-  const [a, b, ...arr] = list;  // can replace a and b with ",," => [,, ...arr]
+  const [, , ...arr] = list;  // can replace a and b with ",," => [,, ...arr]
   return arr;
 }
 const arr = removeFirstTwo(source);
@@ -139,5 +139,168 @@ const half = ({ max, min }) => (max + min) / 2.0;
 
 console.log(half(stats))
 ```  
-  
+  <li>Create Strings using Template Literals</li>
+
+```javascript
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+
+  const failureItems = [];
+  for (let i = 0; i < arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+  }
+  return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+```
+
+```javascript
+// Alternative
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+  const failureItems = arr.map(item => `<li class="text-warning">${item}</li>`);
+  return failureItems;
+}
+const failuresList = makeList(result.failure);
+```
+
+```
+//output
+[
+  '<li class="text-warning">no-var</li>',
+  '<li class="text-warning">var-on-top</li>',
+  '<li class="text-warning">linebreak</li>'
+]
+```
+
+<li>Write Concise Object Literal Declarations Using Object Property Shorthand</li>
+
+```javascript
+// returning an object that accepts the function’s parameters as its attributes.
+const createPerson = (name, age, gender) => {
+  "use strict";
+  // change code below this line
+  return {
+    name,
+    age,
+    gender
+  };
+  // change code above this line
+};
+```
+
+<li>Write Concise Declarative Functions with ES6</li>
+
+```javascript
+// With ES6, you can remove the function keyword and colon altogether when defining functions in objects
+
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
+```
+
+<li>Use class Syntax to Define a Constructor Function</li>
+
+```javascript
+// Explicit constructor
+class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
+}
+
+// Implicit constructor with no arguments
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
+const zeus = new SpaceShuttle('Jupiter');
+// prints To Jupiter! in console
+zeus.takeOff();
+
+const atlas = new Rocket();
+// prints To the moon! in console
+atlas.launch();
+```
+<li>Use getters and setters to Control Access to an Object</li>
+
+```javascript
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('anonymous');
+console.log(novel.writer);
+novel.writer = 'newAuthor';
+console.log(novel.writer);
+```
+
+<li>Use export to Share a Code Block</li>
+
+```javascript
+const add = (x, y) => {
+  return x + y;
+}
+
+export { add, subtract };
+```
+
+<li>Create an Export Fallback with export default</li>
+
+```javascript
+// export default ==> usually used if only one value is being exported from a file.
+// also used to create a fallback value for a file or module
+// cannot use export default with var, let, or const
+
+export default function add(x, y) {
+  return x + y;
+}
+
+// anonymous fx
+export default function(x, y) {
+  return x + y;
+}
+
+```
+
+<li>Import a Default Export</li>
+
+```javascript
+// imported value is not surrounded by { }
+import add from "./math_functions.js";
+```
+
+
 </ol>
+
+
